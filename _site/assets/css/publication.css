@@ -1,0 +1,66 @@
+.publications {
+    display: grid;
+    row-gap: 2rem;
+    margin: 1rem 0 1rem 0;
+    border-top: 2px solid var(--gray-3);
+}
+
+.publications .header {
+    margin-top: 1rem;
+}
+
+.publications .publication {
+  padding: 1rem;
+  background: var(--gray-3);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.publications .publication:hover {
+    transform: scale(1.05);
+}
+
+.publications .authors {
+    justify-content: flex-start;
+}
+
+.publications .publication .abstract {
+    display: none;
+    padding-top: 1rem;
+}
+
+.publications .publication .abstract_button {
+    display: none;
+    background: var(--gray-5);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
+    float: right;
+}
+
+.publications a {
+    text-decoration: none;
+    color: var(--white-2);
+}
+
+.publications .publication .publication-title {
+  color: var(--white-2);
+  font-weight: 100;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 130%;
+}
+
+.publications .publication .conference,
+.publications .publication .conference a {
+  color: var(--white-2);
+  font-weight: 200;
+  font-style: bold;
+  font-size: 1rem;
+  line-height: 130%;
+}
+
+.publications .publication .date {
+  display: block;
+  font-size: 0.8rem;
+}

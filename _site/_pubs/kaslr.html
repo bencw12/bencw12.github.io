@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>KASLR in the age of microVMs</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="KASLR in the age of microVMs" />
+<meta name="author" content="Benjamin Holmes" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/_pubs/kaslr.html" />
+<meta property="og:url" content="http://localhost:4000/_pubs/kaslr.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="KASLR in the age of microVMs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Benjamin Holmes"},"headline":"KASLR in the age of microVMs","url":"http://localhost:4000/_pubs/kaslr.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=94d40c72286aeb20ab4d93b6e904333cc93171ab">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/"></a></h1>
+      
+
+      <hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Address space layout randomization (ASLR) is a widely used component of computer security aimed at 
+preventing code reuse and/or data-only attacks. Modern kernels utilize kernel ASLR (KASLR) and 
+finer-grained forms, such as functional granular KASLR (FGKASLR), but do so as part of an 
+inefficient bootstrapping process we call bootstrap self-randomization. Meanwhile, under 
+increasing pressure to optimize their boot times, microVM architectures such as AWS Firecracker 
+have resorted to eliminating bootstrapping steps, particularly decompression and relocation from 
+the guest kernel boot process, leaving them without KASLR. In this paper, we present in-monitor 
+KASLR, in which the virtual machine monitor efficiently implements KASLR for the guest kernel by 
+skipping the expensive kernel self-relocation steps. We prototype in-monitor KASLR and FGKASLR in 
+the open-source Firecracker virtual machine monitor demonstrating, on a microVM configured kernel, 
+boot times 22% and 16% faster than bootstrapped KASLR and FGKASLR methods, respectively. We also 
+show the low overhead of in-monitor KASLR, with only 4% (2 ms) increase in boot times on average 
+compared to a kernel without KASLR. We also discuss the implications and future opportunities for 
+in-monitor approaches.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+title: ""
+
+# for atom feed
+name: Ben Holmes
+email: bcwh [at] csail [dot] mit [dot] edu
+github_username: bencw12
+
+markdown: GitHub
+
+plugins:
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+include : ["_pubs"]
+
+collections:
+  pubs:
+    output: true
+    permalink : /:collection/:path/
+
+exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]

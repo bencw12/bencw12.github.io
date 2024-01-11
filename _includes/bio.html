@@ -1,0 +1,22 @@
+<section class="bio">
+  <a>
+    <img src="{{site.data.author.dp}}" alt="" class="pfp" />
+  </a>
+  <section class="bio-wrapper">
+    {% capture bio_md %}{% include bio.md %}{% endcapture %}
+    {{ bio_md | markdownify }}
+    <section class="contact-wrapper">
+      {% for contact in site.data.author.contact %}
+      <a href="{{contact.url}}">
+	<img src="assets/icons/{{contact.title}}.png" alt="" class="icon"></img>
+      </a>
+      {% endfor %}
+      <p>{{site.data.author.email}}</p>
+    </section>
+  </section>
+</section>
+<section class="desc">
+    {% capture desc_md %}{% include desc.md %}{% endcapture %}
+    {{ desc_md | markdownify }}  
+</section>
+

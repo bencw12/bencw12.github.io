@@ -1,0 +1,32 @@
+<section>
+  <article class="publications">
+    <h2 class="header">Publications</h2>
+    {% assign sorted_pubs = site.pubs | sort: "year" | reverse %}
+    {% for pub in sorted_pubs %}
+    <section class="publication">
+      <h2 class="publication-title">
+	<a href="assets/pdfs/{{pub.name}}.pdf">{{pub.title}}</a>
+      </h2>
+      <section class="authors">
+	{% for a in pub.authors %}
+	{% if a == pub.authors.last %}
+	<small>and {{a}}</small>
+	{% else %}
+	<small>{{a}}, </small>
+	{% endif %}
+	{% endfor %}
+      </section>
+      <small class="conference">{{pub.conference}}</small>
+      <section class="abstract_button">
+	Abstract
+      </section>
+      <section class="abstract">
+	{% capture abstract %}{{pub}}{% endcapture %}
+	{{ abstract | markdownify }}
+      </section>
+    </section>
+    {%endfor%}
+  </article>
+</section>
+
+

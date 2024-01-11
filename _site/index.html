@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> | About</title>
+  <link rel="stylesheet" href="/assets/css/post.css" />
+  <link rel="stylesheet" href="/assets/css/syntax.css" />
+  <link rel="stylesheet" href="/assets/css/blog.css" />
+  <link rel="stylesheet" href="/assets/css/publication.css" />
+  <link rel="stylesheet" href="/assets/css/bio.css" />
+  <link rel="stylesheet" href="/assets/css/common.css" />
+  <script src="/assets/js/categories.js"></script>
+  <script>
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      document.documentElement.setAttribute(
+        "data-theme",
+        localStorage.getItem("theme")
+      );
+    }
+  </script>
+  <script defer src="/assets/js/lbox.js"></script>
+  <script defer src="/assets/js/abstract.js"></script>
+</head>
+
+  <body>
+    <main>
+      <header>
+  <!-- dark/light mode -->
+  <span id="dark-mode-toggle" style="cursor: pointer">
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 16 16"
+      height="1.2em"
+      width="1.2em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 13V2a6 6 0 1 1 0 12z"
+      ></path>
+    </svg>
+  </span>
+</header>
+
+      <section class="bio">
+  <a>
+    <img src="https://s3.amazonaws.com/keybase_processed_uploads/6ee4a9f0c7e721615eff42c00e676905_360_360.jpg" alt="" class="pfp" />
+  </a>
+  <section class="bio-wrapper">
+    
+    <h2 id="ben-holmes">Ben Holmes</h2>
+<p>PhD Student at MIT working with <a href="http://www.abelay.me">Adam Belay</a> 
+in <a href="https://pdos.csail.mit.edu/">PDOS</a></p>
+
+
+    <section class="contact-wrapper">
+      
+      <a href="https://github.com/bencw12">
+	<img src="assets/icons/github.png" alt="" class="icon"></img>
+      </a>
+      
+      <a href="">
+	<img src="assets/icons/email.png" alt="" class="icon"></img>
+      </a>
+      
+      <p>bcwh(at)csail(dot)mit(dot)edu</p>
+    </section>
+  </section>
+</section>
+<section class="desc">
+    
+    <p>I’m interested in designing fast and secure operating systems for datacenters. 
+Prior to MIT I studied at Vassar College working with Prof. 
+<a href="https://www.cs.vassar.edu/people/top">Jason Waterman</a> and 
+Prof. <a href="https://people.cs.vt.edu/djwillia/">Dan Williams</a> (Virginia Tech).</p>
+  
+</section>
+
+
+      <section>
+  <article class="publications">
+    <h2 class="header">Publications</h2>
+    
+    
+    <section class="publication">
+      <h2 class="publication-title">
+	<a href="assets/pdfs/sev.pdf">SEVeriFast: Minimizing the root of trust for fast startup of SEV microVMs</a>
+      </h2>
+      <section class="authors">
+	
+	
+	<small>Benjamin Holmes, </small>
+	
+	
+	
+	<small>Jason Waterman, </small>
+	
+	
+	
+	<small>and Dan Williams</small>
+	
+	
+      </section>
+      <small class="conference">ASPLOS '24 (to appear)</small>
+      <section class="abstract_button">
+	Abstract
+      </section>
+      <section class="abstract">
+	
+	<hr />
+
+
+      </section>
+    </section>
+    
+    <section class="publication">
+      <h2 class="publication-title">
+	<a href="assets/pdfs/kaslr.pdf">KASLR in the age of microVMs</a>
+      </h2>
+      <section class="authors">
+	
+	
+	<small>Benjamin Holmes, </small>
+	
+	
+	
+	<small>Jason Waterman, </small>
+	
+	
+	
+	<small>and Dan Williams</small>
+	
+	
+      </section>
+      <small class="conference">EuroSys '22</small>
+      <section class="abstract_button">
+	Abstract
+      </section>
+      <section class="abstract">
+	
+	<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Address space layout randomization (ASLR) is a widely used component of computer security aimed at 
+preventing code reuse and/or data-only attacks. Modern kernels utilize kernel ASLR (KASLR) and 
+finer-grained forms, such as functional granular KASLR (FGKASLR), but do so as part of an 
+inefficient bootstrapping process we call bootstrap self-randomization. Meanwhile, under 
+increasing pressure to optimize their boot times, microVM architectures such as AWS Firecracker 
+have resorted to eliminating bootstrapping steps, particularly decompression and relocation from 
+the guest kernel boot process, leaving them without KASLR. In this paper, we present in-monitor 
+KASLR, in which the virtual machine monitor efficiently implements KASLR for the guest kernel by 
+skipping the expensive kernel self-relocation steps. We prototype in-monitor KASLR and FGKASLR in 
+the open-source Firecracker virtual machine monitor demonstrating, on a microVM configured kernel, 
+boot times 22% and 16% faster than bootstrapped KASLR and FGKASLR methods, respectively. We also 
+show the low overhead of in-monitor KASLR, with only 4% (2 ms) increase in boot times on average 
+compared to a kernel without KASLR. We also discuss the implications and future opportunities for 
+in-monitor approaches.</p>
+
+      </section>
+    </section>
+    
+  </article>
+</section>
+
+
+
+      <!-- <footer> -->
+<!--   <p>&copy; 1947 - 2024 | </p> -->
+<!-- </footer> -->
+<script src="/assets/js/mode.js" defer></script>
+
+    </main>
+    <section id="category-modal-bg"></section>
+<section id="category-modal">
+  <h1 id="category-modal-title"></h1>
+  <section id="category-modal-content"></section>
+</section>
+
+  </body>
+</html>
