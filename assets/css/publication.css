@@ -51,6 +51,10 @@
   line-height: 130%;
 }
 
+.publications .publication .publication-title:hover {
+    text-decoration: underline;
+}
+
 .publications .publication .conference,
 .publications .publication .conference a {
   color: var(--white-2);
