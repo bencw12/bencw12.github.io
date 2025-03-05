@@ -2,7 +2,6 @@
 title: KASLR in the age of microVMs
 name: kaslr
 year: 2023
-categories: ["jekyll", "Test Post", "first post"]
 conference: EuroSys '22
 authors: ["Benjamin Holmes", "Jason Waterman", "Dan Williams"]
 ---
