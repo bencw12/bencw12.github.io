@@ -1,7 +1,7 @@
 ---
 title: "Rethinking Process Snapshots for Near-Warm Serverless Cold Starts"
 year: 2026
-conference: OSDI '26 (to appear)
+conference: OSDI '26
 authors: ["Ben Holmes", "Baltasar Dinis", "Lana Honcharuk", "Adam Belay" , "Joshua Fried"]
 name: spice
 ---
