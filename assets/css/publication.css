@@ -68,3 +68,17 @@
   display: block;
   font-size: 0.8rem;
 }
+
+.publications .publication {
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 750px) {
+    .publications .publication:hover {
+        transform: none;
+    }
+
+    .publications .publication .publication-title {
+        font-size: 1.15rem;
+    }
+}

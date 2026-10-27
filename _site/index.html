@@ -53,7 +53,7 @@
   <section class="bio-wrapper">
     
     <h2 id="ben-holmes">Ben Holmes</h2>
-<p>PhD Student at MIT working with <a href="http://www.abelay.me">Adam Belay</a> 
+<p>PhD Student at MIT working with <a href="https://pdos.csail.mit.edu/~kaashoek/">Frans Kaashoek</a>
 in <a href="https://pdos.csail.mit.edu/">PDOS</a></p>
 
 
@@ -63,11 +63,8 @@ in <a href="https://pdos.csail.mit.edu/">PDOS</a></p>
 	<img src="assets/icons/github.png" alt="" class="icon"></img>
       </a>
       
-      <a href="">
-	<img src="assets/icons/email.png" alt="" class="icon"></img>
-      </a>
-      
-      <p>bcwh(at)csail(dot)mit(dot)edu</p>
+      <p>email: bcwh(at)csail(dot)mit(dot)edu, </p>
+      <a href="/assets/pdfs/cv.pdf">CV</a>
     </section>
   </section>
 </section>
@@ -88,6 +85,54 @@ Prof. <a href="https://people.cs.vt.edu/djwillia/">Dan Williams</a> (Virginia Te
     
     <section class="publication">
       <h2 class="publication-title">
+	<a href="assets/pdfs/spice.pdf">Rethinking Process Snapshots for Near-Warm Serverless Cold Starts</a>
+      </h2>
+      <section class="authors">
+	
+	
+	<small>Ben Holmes, </small>
+	
+	
+	
+	<small>Baltasar Dinis, </small>
+	
+	
+	
+	<small>Lana Honcharuk, </small>
+	
+	
+	
+	<small>Adam Belay, </small>
+	
+	
+	
+	<small>and Joshua Fried</small>
+	
+	
+      </section>
+      <small class="conference">OSDI '26 (to appear)</small>
+      <section class="abstract_button">
+	Abstract
+      </section>
+      <section class="abstract">
+	
+	<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Serverless computing promises effortless resource elasticity, yet this vision remains fundamentally limited by cold-start delays. Despite years of optimization, many function invocations still incur delays of tens to hundreds of milliseconds, often exceeding the function’s actual execution time. Existing systems attempt to avoid redundant initialization by snapshotting functions after startup and restoring them on demand, but they still struggle to deliver consistently low-latency startup from disk.</p>
+
+<p>We show that these limitations stem from a lack of OS support for snapshot restoration. Current memory primitives, tailored for incremental process startup, force a trade-off between efficient on-disk layout and cheap virtual address space reconstruction. Furthermore, the kernel lacks a bulk-restore mechanism for process metadata, forcing expensive, fine-grained reconstruction from userspace.</p>
+
+<p>To address this, we introduce the Snapshot Hybrid ELF (SHELF) format and a co-designed kernel primitive, the spliceVMA, which decouple a snapshot’s physical layout on storage from the process’s virtual-memory layout. This enables the efficient overlay of sparse and reordered pages, reliable prefetching, and the elimination of unnecessary I/O, copies, and faults. In parallel, we build an efficient process-metadata restore path that reconstructs process state in bulk rather than using a large number of system calls from userspace.</p>
+
+<p>We implement these mechanisms in Spice, restoring and running functions from disk within 0.6–18ms of warm-invocation latency (compared to 3.6–1197ms in existing systems). For representative Java, Python, and Node.js functions, Spice reduces end-to-end latency by 7.5× and 9.5× on average over state-of-the-art process- and VM-based systems, respectively.</p>
+
+      </section>
+    </section>
+    
+    <section class="publication">
+      <h2 class="publication-title">
 	<a href="assets/pdfs/sev.pdf">SEVeriFast: Minimizing the root of trust for fast startup of SEV microVMs</a>
       </h2>
       <section class="authors">
@@ -105,7 +150,7 @@ Prof. <a href="https://people.cs.vt.edu/djwillia/">Dan Williams</a> (Virginia Te
 	
 	
       </section>
-      <small class="conference">ASPLOS '24 (to appear)</small>
+      <small class="conference">ASPLOS '24</small>
       <section class="abstract_button">
 	Abstract
       </section>
@@ -113,6 +158,9 @@ Prof. <a href="https://people.cs.vt.edu/djwillia/">Dan Williams</a> (Virginia Te
 	
 	<hr />
 
+<h2 id="abstract">Abstract</h2>
+
+<p>Serverless computing platforms rely on fast container initialization to provide low latency and high throughput for requests. While hardware enforced trusted execution environments (TEEs) have gained popularity, confidential computing has yet to be widely adopted by latency-sensitive platforms due to its additional initialization overhead. We investigate the application of AMD’s Secure Encrypted Virtualization (SEV) to microVMs and find that current startup times for confidential VMs are prohibitively slow due to the high cost of establishing a root of trust for each new VM. We present SEVeriFast, a new bootstrap scheme for SEV VMs that reevaluates current microVM techniques for fast boot, such as eliminating bootstrap stages and bypassing guest kernel decompression. Counter-intuitively, we find that introducing an additional bootstrap component and reintroducing kernel compression optimizes the cold boot performance of SEV microVMs by reducing the cost of measurement on the critical boot path and producing a minimal root of trust. To our knowledge, SEVeriFast is the first work to explore the trade-offs associated with booting confidential microVMs and provide a set of guiding principles as a step toward confidential serverless. We show that SEVeriFast improves cold start performance of SEV VMs over current methods by 86-93%.</p>
 
       </section>
     </section>
@@ -170,7 +218,7 @@ in-monitor approaches.</p>
 
 
       <!-- <footer> -->
-<!--   <p>&copy; 1947 - 2024 | </p> -->
+<!--   <p>&copy; 1947 - 2026 | </p> -->
 <!-- </footer> -->
 <script src="/assets/js/mode.js" defer></script>
 

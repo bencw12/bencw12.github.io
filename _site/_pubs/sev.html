@@ -20,7 +20,7 @@
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Benjamin Holmes"},"headline":"SEVeriFast: Minimizing the root of trust for fast startup of SEV microVMs","url":"http://localhost:4000/_pubs/sev.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=94d40c72286aeb20ab4d93b6e904333cc93171ab">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f324327964eee103123a270b92e842af009ceeb7">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -41,6 +41,9 @@
 
       <hr />
 
+<h2 id="abstract">Abstract</h2>
+
+<p>Serverless computing platforms rely on fast container initialization to provide low latency and high throughput for requests. While hardware enforced trusted execution environments (TEEs) have gained popularity, confidential computing has yet to be widely adopted by latency-sensitive platforms due to its additional initialization overhead. We investigate the application of AMD’s Secure Encrypted Virtualization (SEV) to microVMs and find that current startup times for confidential VMs are prohibitively slow due to the high cost of establishing a root of trust for each new VM. We present SEVeriFast, a new bootstrap scheme for SEV VMs that reevaluates current microVM techniques for fast boot, such as eliminating bootstrap stages and bypassing guest kernel decompression. Counter-intuitively, we find that introducing an additional bootstrap component and reintroducing kernel compression optimizes the cold boot performance of SEV microVMs by reducing the cost of measurement on the critical boot path and producing a minimal root of trust. To our knowledge, SEVeriFast is the first work to explore the trade-offs associated with booting confidential microVMs and provide a set of guiding principles as a step toward confidential serverless. We show that SEVeriFast improves cold start performance of SEV VMs over current methods by 86-93%.</p>
 
 
       
