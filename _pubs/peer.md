@@ -1,0 +1,12 @@
+---
+title: "PeeR: First-Class Scheduling for Latency-Critical eBPF Applications"
+year: 2026
+conference: OSDI '26
+authors: ["Jeremy Carin", "Ben Holmes", "Weiyang Wang", "Ankit Bhardwaj", "Manya Ghobadi"]
+name: peer
+---
+_________________
+
+## Abstract
+
+We present PeeR, a novel eBPF runtime that makes latency-critical eBPF programs preemptable and schedulable while maintaining low overhead. As eBPF programs grow more complex, they expose a fundamental gap: performance-critical hooks execute in a non-preemptable softirq context, which is invisible to the scheduler. These programs bypass resource controls, break isolation, and cause head-of-line blocking, degrading tail latency. PeeR exploits two key properties of eBPF: the verifier enforces clean program state at helper function boundaries, making these sites natural preemption points, and non-trivial programs frequently call helpers, ensuring fine-grained preemption opportunities. Building on these properties, PeeR brings cooperative preemption to eBPF: lightweight budget checks, inserted at each helper call, force programs exceeding their budget to yield and resume later on per-CPU kernel threads. To handle a wide variety of workloads, PeeR uses a two-level scheduling model that integrates with sched_ext, where the outer level controls aggregate CPU time for eBPF workloads, while an inner micro-scheduler orders individual tasks according to an operator-defined policy. Our evaluation on Redis, Memcached, echo-server, and TPC-C workloads shows that PeeR reduces p99 latency for latency-sensitive requests by 3× to 19.8× over the current eBPF runtime, without starving competing long-running requests.
